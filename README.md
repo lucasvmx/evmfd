@@ -14,5 +14,6 @@ Brasileiras
 ```bash
 git clone https://github.com/lucasvmx/evmfd.git
 cd evmfd
+asn1c -fline-refs -fcompound-names -fincludes-quoted asn/assinatura.asn1 asn/bu.asn1 asn/rdv.asn1
 make
 ```
