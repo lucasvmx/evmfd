@@ -16,6 +16,5 @@ jobs:
     - name: BU decoding test
       shell: bash
       run: |
-        ./evmfd -b boletim.dat
-      working-directory: bu_files
+        ./evmfd -b bu_files/boletim.dat
     
