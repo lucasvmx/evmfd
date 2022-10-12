@@ -1,0 +1,425 @@
+ASN_MODULE_SRCS=	\
+	ModuloAssinaturaResultado_DataHoraJE.c	\
+	AlgoritmoAssinatura.c	\
+	AlgoritmoHash.c	\
+	ModeloUrna.c	\
+	EntidadeAssinatura.c	\
+	EntidadeAssinaturaResultado.c	\
+	AlgoritmoAssinaturaInfo.c	\
+	AlgoritmoHashInfo.c	\
+	Assinatura.c	\
+	AssinaturaArquivo.c	\
+	AssinaturaDigital.c	\
+	AutoAssinaturaDigital.c	\
+	DescritorChave.c	\
+	ModuloBU_CodigoMunicipio.c	\
+	ModuloBU_DataHoraJE.c	\
+	ModuloBU_IDEleicao.c	\
+	ModuloBU_IDPleito.c	\
+	ModuloBU_IDProcessoEleitoral.c	\
+	ModuloBU_NumeroCargoConsultaLivre.c	\
+	ModuloBU_NumeroInternoUrna.c	\
+	ModuloBU_NumeroLocal.c	\
+	NumeroMesa.c	\
+	NumeroPartido.c	\
+	ModuloBU_NumeroSecao.c	\
+	ModuloBU_NumeroSerieFlash.c	\
+	NumeroUrna.c	\
+	NumeroVotavel.c	\
+	ModuloBU_NumeroZona.c	\
+	QtdEleitores.c	\
+	ModuloBU_CargoConstitucional.c	\
+	ModuloBU_Fase.c	\
+	ModuloBU_MotivoApuracaoEletronica.c	\
+	ModuloBU_MotivoApuracaoManual.c	\
+	ModuloBU_MotivoApuracaoMistaComBU.c	\
+	ModuloBU_MotivoApuracaoMistaComMR.c	\
+	ModuloBU_TipoApuracao.c	\
+	ModuloBU_TipoArquivo.c	\
+	TipoCargoConsulta.c	\
+	TipoEnvelope.c	\
+	ModuloBU_TipoUrna.c	\
+	ModuloBU_TipoVoto.c	\
+	EntidadeEnvelopeGenerico.c	\
+	Seguranca.c	\
+	EntidadeBoletimUrna.c	\
+	ModuloBU_ApuracaoEletronica.c	\
+	ModuloBU_ApuracaoMistaBUAE.c	\
+	ModuloBU_ApuracaoMistaMR.c	\
+	ModuloBU_ApuracaoTotalmenteManualDigitacaoAE.c	\
+	ModuloBU_CabecalhoEntidade.c	\
+	ModuloBU_Carga.c	\
+	ModuloBU_CodigoCargoConsulta.c	\
+	ModuloBU_CorrespondenciaResultado.c	\
+	DadosSA.c	\
+	DadosSecao.c	\
+	DadosSecaoSA.c	\
+	HistoricoVotoImpresso.c	\
+	ModuloBU_IDEleitoral.c	\
+	ModuloBU_IdentificacaoContingencia.c	\
+	IdentificacaoMesaJustificativa.c	\
+	ModuloBU_IdentificacaoSecaoEleitoral.c	\
+	ModuloBU_IdentificacaoUrna.c	\
+	IdentificacaoVotavel.c	\
+	ModuloBU_MunicipioZona.c	\
+	ResultadoVotacao.c	\
+	ResultadoVotacaoPorEleicao.c	\
+	ModuloBU_TipoApuracaoSA.c	\
+	TotalVotosCargo.c	\
+	TotalVotosVotavel.c	\
+	ModuloBU_Urna.c	\
+	ModuloRegistroDigitalVoto_CodigoMunicipio.c	\
+	ModuloRegistroDigitalVoto_DataHoraJE.c	\
+	ModuloRegistroDigitalVoto_IDEleicao.c	\
+	ModuloRegistroDigitalVoto_IDPleito.c	\
+	ModuloRegistroDigitalVoto_IDProcessoEleitoral.c	\
+	ModuloRegistroDigitalVoto_NumeroCargoConsultaLivre.c	\
+	ModuloRegistroDigitalVoto_NumeroInternoUrna.c	\
+	ModuloRegistroDigitalVoto_NumeroLocal.c	\
+	ModuloRegistroDigitalVoto_NumeroSecao.c	\
+	ModuloRegistroDigitalVoto_NumeroSerieFlash.c	\
+	ModuloRegistroDigitalVoto_NumeroZona.c	\
+	QuantidadeEscolhas.c	\
+	VotoDigitado.c	\
+	ModuloRegistroDigitalVoto_CargoConstitucional.c	\
+	ModuloRegistroDigitalVoto_Fase.c	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoEletronica.c	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoManual.c	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoMistaComBU.c	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoMistaComMR.c	\
+	OrigemVotosSA.c	\
+	ModuloRegistroDigitalVoto_TipoApuracao.c	\
+	ModuloRegistroDigitalVoto_TipoArquivo.c	\
+	TipoCedulaSA.c	\
+	ModuloRegistroDigitalVoto_TipoUrna.c	\
+	ModuloRegistroDigitalVoto_TipoVoto.c	\
+	EntidadeResultadoRDV.c	\
+	EntidadeRegistroDigitalVoto.c	\
+	ModuloRegistroDigitalVoto_ApuracaoEletronica.c	\
+	ModuloRegistroDigitalVoto_ApuracaoMistaBUAE.c	\
+	ModuloRegistroDigitalVoto_ApuracaoMistaMR.c	\
+	ModuloRegistroDigitalVoto_ApuracaoTotalmenteManualDigitacaoAE.c	\
+	ModuloRegistroDigitalVoto_CabecalhoEntidade.c	\
+	ModuloRegistroDigitalVoto_Carga.c	\
+	ModuloRegistroDigitalVoto_CodigoCargoConsulta.c	\
+	ModuloRegistroDigitalVoto_CorrespondenciaResultado.c	\
+	EleicaoVota.c	\
+	EleicaoSA.c	\
+	Eleicoes.c	\
+	ModuloRegistroDigitalVoto_IDEleitoral.c	\
+	ModuloRegistroDigitalVoto_IdentificacaoContingencia.c	\
+	ModuloRegistroDigitalVoto_IdentificacaoSecaoEleitoral.c	\
+	ModuloRegistroDigitalVoto_IdentificacaoUrna.c	\
+	ModuloRegistroDigitalVoto_MunicipioZona.c	\
+	ModuloRegistroDigitalVoto_TipoApuracaoSA.c	\
+	ModuloRegistroDigitalVoto_Urna.c	\
+	Voto.c	\
+	VotosCargo.c	\
+	EXTERNAL.c
+
+ASN_MODULE_HDRS=	\
+	ModuloAssinaturaResultado_DataHoraJE.h	\
+	AlgoritmoAssinatura.h	\
+	AlgoritmoHash.h	\
+	ModeloUrna.h	\
+	EntidadeAssinatura.h	\
+	EntidadeAssinaturaResultado.h	\
+	AlgoritmoAssinaturaInfo.h	\
+	AlgoritmoHashInfo.h	\
+	Assinatura.h	\
+	AssinaturaArquivo.h	\
+	AssinaturaDigital.h	\
+	AutoAssinaturaDigital.h	\
+	DescritorChave.h	\
+	ModuloBU_CodigoMunicipio.h	\
+	ModuloBU_DataHoraJE.h	\
+	ModuloBU_IDEleicao.h	\
+	ModuloBU_IDPleito.h	\
+	ModuloBU_IDProcessoEleitoral.h	\
+	ModuloBU_NumeroCargoConsultaLivre.h	\
+	ModuloBU_NumeroInternoUrna.h	\
+	ModuloBU_NumeroLocal.h	\
+	NumeroMesa.h	\
+	NumeroPartido.h	\
+	ModuloBU_NumeroSecao.h	\
+	ModuloBU_NumeroSerieFlash.h	\
+	NumeroUrna.h	\
+	NumeroVotavel.h	\
+	ModuloBU_NumeroZona.h	\
+	QtdEleitores.h	\
+	ModuloBU_CargoConstitucional.h	\
+	ModuloBU_Fase.h	\
+	ModuloBU_MotivoApuracaoEletronica.h	\
+	ModuloBU_MotivoApuracaoManual.h	\
+	ModuloBU_MotivoApuracaoMistaComBU.h	\
+	ModuloBU_MotivoApuracaoMistaComMR.h	\
+	ModuloBU_TipoApuracao.h	\
+	ModuloBU_TipoArquivo.h	\
+	TipoCargoConsulta.h	\
+	TipoEnvelope.h	\
+	ModuloBU_TipoUrna.h	\
+	ModuloBU_TipoVoto.h	\
+	EntidadeEnvelopeGenerico.h	\
+	Seguranca.h	\
+	EntidadeBoletimUrna.h	\
+	ModuloBU_ApuracaoEletronica.h	\
+	ModuloBU_ApuracaoMistaBUAE.h	\
+	ModuloBU_ApuracaoMistaMR.h	\
+	ModuloBU_ApuracaoTotalmenteManualDigitacaoAE.h	\
+	ModuloBU_CabecalhoEntidade.h	\
+	ModuloBU_Carga.h	\
+	ModuloBU_CodigoCargoConsulta.h	\
+	ModuloBU_CorrespondenciaResultado.h	\
+	DadosSA.h	\
+	DadosSecao.h	\
+	DadosSecaoSA.h	\
+	HistoricoVotoImpresso.h	\
+	ModuloBU_IDEleitoral.h	\
+	ModuloBU_IdentificacaoContingencia.h	\
+	IdentificacaoMesaJustificativa.h	\
+	ModuloBU_IdentificacaoSecaoEleitoral.h	\
+	ModuloBU_IdentificacaoUrna.h	\
+	IdentificacaoVotavel.h	\
+	ModuloBU_MunicipioZona.h	\
+	ResultadoVotacao.h	\
+	ResultadoVotacaoPorEleicao.h	\
+	ModuloBU_TipoApuracaoSA.h	\
+	TotalVotosCargo.h	\
+	TotalVotosVotavel.h	\
+	ModuloBU_Urna.h	\
+	ModuloRegistroDigitalVoto_CodigoMunicipio.h	\
+	ModuloRegistroDigitalVoto_DataHoraJE.h	\
+	ModuloRegistroDigitalVoto_IDEleicao.h	\
+	ModuloRegistroDigitalVoto_IDPleito.h	\
+	ModuloRegistroDigitalVoto_IDProcessoEleitoral.h	\
+	ModuloRegistroDigitalVoto_NumeroCargoConsultaLivre.h	\
+	ModuloRegistroDigitalVoto_NumeroInternoUrna.h	\
+	ModuloRegistroDigitalVoto_NumeroLocal.h	\
+	ModuloRegistroDigitalVoto_NumeroSecao.h	\
+	ModuloRegistroDigitalVoto_NumeroSerieFlash.h	\
+	ModuloRegistroDigitalVoto_NumeroZona.h	\
+	QuantidadeEscolhas.h	\
+	VotoDigitado.h	\
+	ModuloRegistroDigitalVoto_CargoConstitucional.h	\
+	ModuloRegistroDigitalVoto_Fase.h	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoEletronica.h	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoManual.h	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoMistaComBU.h	\
+	ModuloRegistroDigitalVoto_MotivoApuracaoMistaComMR.h	\
+	OrigemVotosSA.h	\
+	ModuloRegistroDigitalVoto_TipoApuracao.h	\
+	ModuloRegistroDigitalVoto_TipoArquivo.h	\
+	TipoCedulaSA.h	\
+	ModuloRegistroDigitalVoto_TipoUrna.h	\
+	ModuloRegistroDigitalVoto_TipoVoto.h	\
+	EntidadeResultadoRDV.h	\
+	EntidadeRegistroDigitalVoto.h	\
+	ModuloRegistroDigitalVoto_ApuracaoEletronica.h	\
+	ModuloRegistroDigitalVoto_ApuracaoMistaBUAE.h	\
+	ModuloRegistroDigitalVoto_ApuracaoMistaMR.h	\
+	ModuloRegistroDigitalVoto_ApuracaoTotalmenteManualDigitacaoAE.h	\
+	ModuloRegistroDigitalVoto_CabecalhoEntidade.h	\
+	ModuloRegistroDigitalVoto_Carga.h	\
+	ModuloRegistroDigitalVoto_CodigoCargoConsulta.h	\
+	ModuloRegistroDigitalVoto_CorrespondenciaResultado.h	\
+	EleicaoVota.h	\
+	EleicaoSA.h	\
+	Eleicoes.h	\
+	ModuloRegistroDigitalVoto_IDEleitoral.h	\
+	ModuloRegistroDigitalVoto_IdentificacaoContingencia.h	\
+	ModuloRegistroDigitalVoto_IdentificacaoSecaoEleitoral.h	\
+	ModuloRegistroDigitalVoto_IdentificacaoUrna.h	\
+	ModuloRegistroDigitalVoto_MunicipioZona.h	\
+	ModuloRegistroDigitalVoto_TipoApuracaoSA.h	\
+	ModuloRegistroDigitalVoto_Urna.h	\
+	Voto.h	\
+	VotosCargo.h	\
+	EXTERNAL.h
+
+ASN_MODULE_HDRS+=ANY.h
+ASN_MODULE_SRCS+=ANY.c
+ASN_MODULE_HDRS+=OCTET_STRING.h
+ASN_MODULE_HDRS+=OPEN_TYPE.h
+ASN_MODULE_SRCS+=OPEN_TYPE.c
+ASN_MODULE_HDRS+=constr_CHOICE.h
+ASN_MODULE_HDRS+=GeneralString.h
+ASN_MODULE_SRCS+=GeneralString.c
+ASN_MODULE_HDRS+=GraphicString.h
+ASN_MODULE_SRCS+=GraphicString.c
+ASN_MODULE_HDRS+=INTEGER.h
+ASN_MODULE_SRCS+=INTEGER.c
+ASN_MODULE_HDRS+=NativeEnumerated.h
+ASN_MODULE_SRCS+=NativeEnumerated.c
+ASN_MODULE_HDRS+=NativeInteger.h
+ASN_MODULE_SRCS+=NativeInteger.c
+ASN_MODULE_HDRS+=NumericString.h
+ASN_MODULE_SRCS+=NumericString.c
+ASN_MODULE_HDRS+=OBJECT_IDENTIFIER.h
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER.c
+ASN_MODULE_HDRS+=asn_codecs_prim.h
+ASN_MODULE_HDRS+=ObjectDescriptor.h
+ASN_MODULE_SRCS+=ObjectDescriptor.c
+ASN_MODULE_HDRS+=asn_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=asn_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=asn_SET_OF.h
+ASN_MODULE_SRCS+=asn_SET_OF.c
+ASN_MODULE_SRCS+=constr_CHOICE.c
+ASN_MODULE_HDRS+=constr_SEQUENCE.h
+ASN_MODULE_SRCS+=constr_SEQUENCE.c
+ASN_MODULE_HDRS+=constr_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=constr_SET_OF.h
+ASN_MODULE_SRCS+=constr_SET_OF.c
+ASN_MODULE_HDRS+=asn_application.h
+ASN_MODULE_SRCS+=asn_application.c
+ASN_MODULE_HDRS+=asn_ioc.h
+ASN_MODULE_HDRS+=asn_system.h
+ASN_MODULE_HDRS+=asn_codecs.h
+ASN_MODULE_HDRS+=asn_internal.h
+ASN_MODULE_SRCS+=asn_internal.c
+ASN_MODULE_HDRS+=asn_bit_data.h
+ASN_MODULE_SRCS+=asn_bit_data.c
+ASN_MODULE_SRCS+=OCTET_STRING.c
+ASN_MODULE_HDRS+=BIT_STRING.h
+ASN_MODULE_SRCS+=BIT_STRING.c
+ASN_MODULE_SRCS+=asn_codecs_prim.c
+ASN_MODULE_HDRS+=ber_tlv_length.h
+ASN_MODULE_SRCS+=ber_tlv_length.c
+ASN_MODULE_HDRS+=ber_tlv_tag.h
+ASN_MODULE_SRCS+=ber_tlv_tag.c
+ASN_MODULE_HDRS+=constr_TYPE.h
+ASN_MODULE_SRCS+=constr_TYPE.c
+ASN_MODULE_HDRS+=constraints.h
+ASN_MODULE_SRCS+=constraints.c
+ASN_MODULE_HDRS+=ber_decoder.h
+ASN_MODULE_HDRS+=der_encoder.h
+ASN_MODULE_SRCS+=ber_decoder.c
+ASN_MODULE_SRCS+=der_encoder.c
+ASN_MODULE_SRCS+=ANY_ber.c
+ASN_MODULE_SRCS+=INTEGER_ber.c
+ASN_MODULE_SRCS+=NativeInteger_ber.c
+ASN_MODULE_SRCS+=OCTET_STRING_ber.c
+ASN_MODULE_SRCS+=OPEN_TYPE_ber.c
+ASN_MODULE_SRCS+=asn_codecs_prim_ber.c
+ASN_MODULE_SRCS+=constr_CHOICE_ber.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_ber.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_ber.c
+ASN_MODULE_SRCS+=constr_SET_OF_ber.c
+ASN_MODULE_HDRS+=xer_support.h
+ASN_MODULE_HDRS+=xer_decoder.h
+ASN_MODULE_HDRS+=xer_encoder.h
+ASN_MODULE_SRCS+=xer_support.c
+ASN_MODULE_SRCS+=xer_decoder.c
+ASN_MODULE_SRCS+=xer_encoder.c
+ASN_MODULE_SRCS+=ANY_xer.c
+ASN_MODULE_SRCS+=BIT_STRING_xer.c
+ASN_MODULE_SRCS+=INTEGER_xer.c
+ASN_MODULE_SRCS+=NativeEnumerated_xer.c
+ASN_MODULE_SRCS+=NativeInteger_xer.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_xer.c
+ASN_MODULE_SRCS+=OCTET_STRING_xer.c
+ASN_MODULE_SRCS+=OPEN_TYPE_xer.c
+ASN_MODULE_SRCS+=asn_codecs_prim_xer.c
+ASN_MODULE_SRCS+=constr_CHOICE_xer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_xer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_xer.c
+ASN_MODULE_SRCS+=constr_SET_OF_xer.c
+ASN_MODULE_HDRS+=oer_decoder.h
+ASN_MODULE_HDRS+=oer_encoder.h
+ASN_MODULE_HDRS+=oer_support.h
+ASN_MODULE_SRCS+=oer_decoder.c
+ASN_MODULE_SRCS+=oer_encoder.c
+ASN_MODULE_SRCS+=oer_support.c
+ASN_MODULE_SRCS+=OPEN_TYPE_oer.c
+ASN_MODULE_SRCS+=INTEGER_oer.c
+ASN_MODULE_SRCS+=BIT_STRING_oer.c
+ASN_MODULE_SRCS+=OCTET_STRING_oer.c
+ASN_MODULE_SRCS+=NativeInteger_oer.c
+ASN_MODULE_SRCS+=NativeEnumerated_oer.c
+ASN_MODULE_SRCS+=constr_CHOICE_oer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_oer.c
+ASN_MODULE_SRCS+=constr_SET_OF_oer.c
+ASN_MODULE_HDRS+=per_decoder.h
+ASN_MODULE_HDRS+=per_encoder.h
+ASN_MODULE_HDRS+=per_support.h
+ASN_MODULE_HDRS+=per_opentype.h
+ASN_MODULE_SRCS+=per_decoder.c
+ASN_MODULE_SRCS+=per_encoder.c
+ASN_MODULE_SRCS+=per_support.c
+ASN_MODULE_SRCS+=per_opentype.c
+ASN_MODULE_HDRS+=uper_decoder.h
+ASN_MODULE_HDRS+=uper_encoder.h
+ASN_MODULE_HDRS+=uper_support.h
+ASN_MODULE_HDRS+=uper_opentype.h
+ASN_MODULE_SRCS+=uper_decoder.c
+ASN_MODULE_SRCS+=uper_encoder.c
+ASN_MODULE_SRCS+=uper_support.c
+ASN_MODULE_SRCS+=uper_opentype.c
+ASN_MODULE_SRCS+=ANY_uper.c
+ASN_MODULE_SRCS+=BIT_STRING_uper.c
+ASN_MODULE_SRCS+=INTEGER_uper.c
+ASN_MODULE_SRCS+=NativeEnumerated_uper.c
+ASN_MODULE_SRCS+=NativeInteger_uper.c
+ASN_MODULE_SRCS+=OCTET_STRING_uper.c
+ASN_MODULE_SRCS+=OPEN_TYPE_uper.c
+ASN_MODULE_SRCS+=constr_CHOICE_uper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_uper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_uper.c
+ASN_MODULE_SRCS+=constr_SET_OF_uper.c
+ASN_MODULE_HDRS+=aper_decoder.h
+ASN_MODULE_HDRS+=aper_encoder.h
+ASN_MODULE_HDRS+=aper_support.h
+ASN_MODULE_HDRS+=aper_opentype.h
+ASN_MODULE_SRCS+=aper_decoder.c
+ASN_MODULE_SRCS+=aper_encoder.c
+ASN_MODULE_SRCS+=aper_support.c
+ASN_MODULE_SRCS+=aper_opentype.c
+ASN_MODULE_SRCS+=ANY_aper.c
+ASN_MODULE_SRCS+=INTEGER_aper.c
+ASN_MODULE_SRCS+=NativeEnumerated_aper.c
+ASN_MODULE_SRCS+=NativeInteger_aper.c
+ASN_MODULE_SRCS+=OCTET_STRING_aper.c
+ASN_MODULE_SRCS+=OPEN_TYPE_aper.c
+ASN_MODULE_SRCS+=constr_CHOICE_aper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_aper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_aper.c
+ASN_MODULE_SRCS+=constr_SET_OF_aper.c
+ASN_MODULE_SRCS+=BIT_STRING_print.c
+ASN_MODULE_SRCS+=INTEGER_print.c
+ASN_MODULE_SRCS+=NativeInteger_print.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_print.c
+ASN_MODULE_SRCS+=OCTET_STRING_print.c
+ASN_MODULE_SRCS+=constr_CHOICE_print.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_print.c
+ASN_MODULE_SRCS+=constr_SET_OF_print.c
+ASN_MODULE_HDRS+=asn_random_fill.h
+ASN_MODULE_SRCS+=asn_random_fill.c
+ASN_MODULE_SRCS+=BIT_STRING_rfill.c
+ASN_MODULE_SRCS+=INTEGER_rfill.c
+ASN_MODULE_SRCS+=NativeInteger_rfill.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_rfill.c
+ASN_MODULE_SRCS+=OCTET_STRING_rfill.c
+ASN_MODULE_SRCS+=constr_CHOICE_rfill.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_rfill.c
+ASN_MODULE_SRCS+=constr_SET_OF_rfill.c
+ASN_MODULE_HDRS+=jer_encoder.h
+ASN_MODULE_SRCS+=jer_encoder.c
+ASN_MODULE_SRCS+=ANY_jer.c
+ASN_MODULE_SRCS+=BIT_STRING_jer.c
+ASN_MODULE_SRCS+=INTEGER_jer.c
+ASN_MODULE_SRCS+=NativeEnumerated_jer.c
+ASN_MODULE_SRCS+=NativeInteger_jer.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_jer.c
+ASN_MODULE_SRCS+=OCTET_STRING_jer.c
+ASN_MODULE_SRCS+=constr_CHOICE_jer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_jer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_jer.c
+ASN_MODULE_SRCS+=constr_SET_OF_jer.c
+
+ASN_MODULE_CFLAGS=
+
+lib_LTLIBRARIES+=libasncodec.la
+libasncodec_la_SOURCES=$(ASN_MODULE_SRCS) $(ASN_MODULE_HDRS)
+libasncodec_la_CPPFLAGS=-I$(top_srcdir)/
+libasncodec_la_CFLAGS=$(ASN_MODULE_CFLAGS)
+libasncodec_la_LDFLAGS=-lm
