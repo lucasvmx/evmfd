@@ -8,7 +8,7 @@ static char str[256];
 EntidadeBoletimUrna_t *decode_bu(const char *bu_filename)
 {
     EntidadeEnvelopeGenerico_t *ent = NULL;
-    EVMFD_FILE *bf = evmfd_read_bin_file_h(bu_filename);
+    EVMFD_FILE *bf = evmfd_read_bin_file(bu_filename);
     asn_dec_rval_t val;
 
     printf("[*] file size: %lu\n", bf->data_size);
