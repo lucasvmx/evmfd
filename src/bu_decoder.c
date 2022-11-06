@@ -2,8 +2,7 @@
 #include "fs.h"
 #include "decoder/bu/EntidadeEnvelopeGenerico.h"
 #include "decoder/bu/ber_decoder.h"
-
-static char str[256];
+#include "util.h"
 
 EntidadeBoletimUrna_t *decode_bu(const char *bu_filename)
 {
@@ -14,77 +13,30 @@ EntidadeBoletimUrna_t *decode_bu(const char *bu_filename)
     printf("[*] file size: %lu\n", bf->data_size);
     printf("[*] decoding %s\n", asn_DEF_EntidadeEnvelopeGenerico.name);
 
-    val = asn_DEF_EntidadeEnvelopeGenerico.op->ber_decoder(
-        0,
-        &asn_DEF_EntidadeEnvelopeGenerico,
-        (void**)&ent, bf->bin_data, bf->data_size, 0
-    );
-
+    val = asn_DEF_EntidadeEnvelopeGenerico.op->ber_decoder(0,&asn_DEF_EntidadeEnvelopeGenerico,(void**)&ent, bf->bin_data, bf->data_size,0);
     if(val.code != RC_OK) {
         printf("[!] couldn't decode '%s': %d\n", asn_DEF_EntidadeEnvelopeGenerico.name, val.code);
-
-        asn_DEF_EntidadeEnvelopeGenerico.op->free_struct(
-            &asn_DEF_EntidadeEnvelopeGenerico,
-            0,
-            ASFM_FREE_EVERYTHING
-        );
+        asn_DEF_EntidadeEnvelopeGenerico.op->free_struct(&asn_DEF_EntidadeEnvelopeGenerico,0,ASFM_FREE_EVERYTHING);
 
         return NULL;
     }
 
-    printf("[+] %s decode ok (%u bytes decoded)\n",
-        asn_DEF_EntidadeEnvelopeGenerico.name,
-        ent->conteudo.size
-    );
+    printf("[+] %s decode ok (%u bytes decoded)\n",asn_DEF_EntidadeEnvelopeGenerico.name,ent->conteudo.size);
 
     OCTET_STRING_t *bu_encoded = &ent->conteudo;
     EntidadeBoletimUrna_t *ebu = 0;
 
     printf("[*] decoding %s\n", asn_DEF_EntidadeBoletimUrna.name);
-    val = asn_DEF_EntidadeBoletimUrna.op->ber_decoder(
-        0,
-        &asn_DEF_EntidadeBoletimUrna,
-        (void**)&ebu,
-        bu_encoded->buf,
-        bu_encoded->size,
-        0
-    );
-
+    val = asn_DEF_EntidadeBoletimUrna.op->ber_decoder(0,&asn_DEF_EntidadeBoletimUrna,(void**)&ebu,bu_encoded->buf,bu_encoded->size,0);
     if(val.code != RC_OK) {
         printf("[!] couldn't decode '%s': %d\n", asn_DEF_EntidadeBoletimUrna.name, val.code);
-        asn_DEF_EntidadeBoletimUrna.op->free_struct(
-            &asn_DEF_EntidadeBoletimUrna,
-            0,
-            ASFM_FREE_EVERYTHING
-        );
+        asn_DEF_EntidadeBoletimUrna.op->free_struct(&asn_DEF_EntidadeBoletimUrna,0,ASFM_FREE_EVERYTHING);
         return NULL;
     }
 
     printf("[+] bu decoding completed\n");
 
     return ebu;
-}
-
-static char *get_string_from_octet(GeneralString_t s)
-{
-    memset(str, 0, sizeof(str)/sizeof(char));
-
-    for(size_t i = 0; i < s.size; i++) {
-        str[i] = (char)s.buf[i];
-    }
-
-    return &str[0];
-}
-
-static char *get_hex_string_from_octet(GeneralString_t s)
-{
-    memset(str, 0, sizeof(str)/sizeof(char));
-
-    for(size_t i = 0; i < s.size; i += 2) {
-        snprintf(&str[i], 3, "%.2x", s.buf[i]);
-    }
-
-    return &str[0];   
 }
 
 void print_bu(EntidadeBoletimUrna_t *bu)
